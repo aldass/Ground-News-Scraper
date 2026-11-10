@@ -394,7 +394,7 @@ class GroundNewsScraperGUI:
         self.log_message("🌍 Ground News Scraper Started")
         self.log_message("=" * 50)
         self.log_message(f"🎯 Target URL: {url}")
-        self.log_message("🔧 Initializing Chrome WebDriver...")
+        self.log_message("🔧 Launching the Playwright browser...")
         
         # Start scraping thread
         self.scraping_thread = threading.Thread(target=self.run_scraper, args=(url,))

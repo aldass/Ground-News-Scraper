@@ -1,0 +1,110 @@
+{
+  "story_id": "GN_20261109_201746_f6d765ef",
+  "metadata": {
+    "title": "SoftBank Group shares surge 11% as Asian tech stocks rally after Wall Street rebounds",
+    "timestamp": "2026-11-09T20:17:46.188131",
+    "url": "https://ground.news/article/softbank-group-shares-surge-11-as-asian-tech-stocks-rally-after-wall-street-rebounds"
+  },
+  "bias_distribution": {
+    "total_sources": "15",
+    "leaning_left": "2",
+    "center": "1",
+    "leaning_right": "3"
+  },
+  "perspective_summaries": {
+    "left": [
+      "South Korea’s KOSPI rose 5.49% to 5,294.35 after gains on Wall Street and reduced uncertainty surrounding the Middle East.",
+      "The Korea Exchange suspended program trading for five minutes after the KOSPI’s sharp rise.",
+      "South Korean technology stocks advanced, with Samsung Electronics gaining 5.85% and SK hynix rising 8.63%.",
+      "U.S. markets rose while Nvidia fell 4.2% and oil prices declined."
+    ],
+    "center": [
+      "On Tuesday, the Korea Composite Stock Price Index surged, prompting the Korea Exchange to activate a buy-side sidecar that suspended program trading for five minutes at 9:06 a.m.",
+      "Asian technology stocks surged Tuesday, tracking overnight Wall Street gains as eased military tensions in the Middle East lifted sentiment amid hopes for diplomatic talks ending the U.S.-Iran war.",
+      "Semiconductor shares led the rebound, with the PHLX semiconductor index jumping 6.85 percent. Market bellwether Samsung Electronics rose 5.85 percent, while chipmaker SK hynix soared 8.63 percent.",
+      "As of 9:10 a.m., the KOSPI added 240.01 points, or 4.78 percent, to 5,258.86. Defense giant Hanwha Aerospace rose 4.85 percent, and major banking group KB Financial Group increased 4.31 percent.",
+      "The rally followed last week's bruising sell-off, with renewed buying in chip names spilling over into Asia as falling oil prices calmed inflation fears. Sentiment across the region improved despite a scandal swirling around Nvidia CEO Jensen Huang."
+    ],
+    "right": []
+  },
+  "sources": [
+    {
+      "news_title": "Global Market Today: Asian stocks rally after US tech surge, oil slump",
+      "news_link": "https://economictimes.indiatimes.com/markets/us-stocks/news/global-market-today-asian-stocks-rally-after-us-tech-surge-oil-slump/articleshow/135696042.cms",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "SoftBank Group shares surge 11% as Asian tech stocks rally after Wall Street rebounds",
+      "news_link": "https://www.cnbc.com/2026/11/10/ai-softbank-sk-hynix-samsung-wall-street-tech-stocks.html",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "KOSPI and KOSDAQ ‘Buy Sidecar’… “AI and Semiconductor Stock Drops Excessive”",
+      "news_link": "https://www.hani.co.kr/arti/economy/finance/1286548.html",
+      "bias": "Left",
+      "text": null
+    },
+    {
+      "news_title": "KOSPI Surges Over 4% on US Semiconductor Boom… Buy-Side Circuit Breakers Triggered in Both Markets",
+      "news_link": "https://www.chosun.com/economy/stock-finance/2026/11/10/GRQWEOBSMU2TMYZTMFSDCZRVMQ/",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "KRX activates buy-side sidecar for KOSPI on sharp rise",
+      "news_link": "https://www.koreatimes.co.kr/economy/20261110/krx-activates-buy-side-sidecar-for-kospi-on-sharp-rise",
+      "bias": "Lean Left",
+      "text": null
+    },
+    {
+      "news_title": "US Tech Stocks Rebound Sharply, Oil Prices Plummet… Will the KOSPI Rebound From the Sharp Drop?",
+      "news_link": "https://www.yna.co.kr/view/AKR20261110019400008",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "Asian Stocks Rise, South Korea's Kospi Jumps 5%",
+      "news_link": "https://www.cnbcindonesia.com/market/20261110072314-17-783725/bursa-asia-kompak-menguat-kospi-korea-selatan-melonjak-5",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "“U.S. Semiconductors Surged 6%, and Sanjeon and Hynix Flew by”... Sidecar of the Two Major Stock Market Purchases",
+      "news_link": "https://www.ddaily.co.kr/page/view/2026111009175965697",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "KOSPI and KOSDAQ Surge over 5%... Buy-Side Circuit Breakers Activated in Both Markets",
+      "news_link": "https://www.imaeil.com/page/view/2026111009213050530",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "KOSPI and KOSDAQ Receive Buy-Side Circuits on Samsung Electronics and SK Hynix Surge",
+      "news_link": "https://www.asiae.co.kr/article/2026111009295006359",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Buy-Side Circuit Breaker Triggered as KOSPI Surges 5%",
+      "news_link": "https://www.seoul.co.kr/news/economy/securities/2026/11/10/20261110500039",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "South Korea’s KOSPI Rises 4.55% Above 5,200 in Early Trading",
+      "news_link": "https://www.tokenpost.com/news/investing/52662",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "KOSPI today: Why South Korea's stock market rebounded above 5,100",
+      "news_link": "https://invezz.com/news/2026/11/09/kospi-today-south-korea-stock-market-rebound/",
+      "bias": "unknown",
+      "text": null
+    }
+  ]
+}

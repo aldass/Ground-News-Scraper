@@ -1,214 +1,249 @@
-import time
-import json
+"""Command-line entry point for the Ground News scraper.
+
+Usage:
+    uv run python g.py "https://ground.news/article/..."
+    uv run python g.py URL1 URL2 --headed --min-interval 6
+    uv run python g.py --feed "https://ground.news/interest/stock-markets" --limit 5
+
+The GUI calls this script with a single URL, and ``gn.py`` calls it once per
+URL. Pacing is shared across those processes through ``state/rate_limit.json``.
+"""
+
+from __future__ import annotations
+
+import argparse
+import logging
 import sys
-import os
-import uuid
-from datetime import datetime
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from tqdm import tqdm
+from pathlib import Path
 
-import trafilatura
+from playwright.sync_api import Error as PlaywrightError
 
-def fetch_article_data(url):
-    # Setup WebDriver
-    options = webdriver.ChromeOptions()
-    options.add_argument("--start-maximized")  # Make sure the browser window is maximized
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+from rate_limit import RateLimitError
+from scraper import (
+    DEFAULT_OUTPUT_DIR,
+    DEFAULT_RATE_LIMIT_STATE,
+    DEFAULT_STORAGE_STATE,
+    GroundNewsScraper,
+    ScrapeConfig,
+    ScrapeError,
+)
+
+logger = logging.getLogger("groundnews")
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description="Scrape Ground News article pages (coverage counts, perspective summaries, sources).",
+    )
+    parser.add_argument("urls", nargs="*", metavar="URL", help="Ground News article URL(s)")
+    parser.add_argument(
+        "--feed",
+        action="extend",
+        nargs="+",
+        default=[],
+        metavar="URL",
+        help="topic/feed page (e.g. https://ground.news/interest/stock-markets); its article links are scraped",
+    )
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=0,
+        metavar="N",
+        help="max articles to take from each --feed page (0 = all found; default: 0)",
+    )
+    parser.add_argument(
+        "-o",
+        "--output-dir",
+        type=Path,
+        default=DEFAULT_OUTPUT_DIR,
+        help=f"where to write story JSON files (default: {DEFAULT_OUTPUT_DIR})",
+    )
+    parser.add_argument(
+        "--storage-state",
+        type=Path,
+        default=DEFAULT_STORAGE_STATE,
+        help=f"Playwright session file created by login.py (default: {DEFAULT_STORAGE_STATE})",
+    )
+    parser.add_argument(
+        "--no-auth",
+        action="store_true",
+        help="ignore any saved session and scrape anonymously",
+    )
+    parser.add_argument(
+        "--headed",
+        action="store_true",
+        help="show the browser window instead of running headless",
+    )
+    parser.add_argument(
+        "--min-interval",
+        type=float,
+        default=4.0,
+        metavar="SECONDS",
+        help="minimum seconds between requests to the same host (default: 4.0)",
+    )
+    parser.add_argument(
+        "--jitter",
+        type=float,
+        default=2.0,
+        metavar="SECONDS",
+        help="random extra delay added to --min-interval (default: 2.0)",
+    )
+    parser.add_argument(
+        "--source-interval",
+        type=float,
+        default=1.5,
+        metavar="SECONDS",
+        help="minimum seconds between any two cited-article fetches (default: 1.5)",
+    )
+    parser.add_argument(
+        "--max-load-more",
+        type=int,
+        default=40,
+        metavar="BATCHES",
+        help="cap on 'load more stories' clicks per article (default: 40)",
+    )
+    parser.add_argument(
+        "--no-source-text",
+        action="store_true",
+        help="store sources without downloading each cited article's text",
+    )
+    parser.add_argument(
+        "--respect-robots",
+        action="store_true",
+        help="skip cited articles whose robots.txt disallows fetching",
+    )
+    parser.add_argument(
+        "--block-resources",
+        action="store_true",
+        help="block images, fonts, and media to reduce page weight",
+    )
+    parser.add_argument(
+        "--timeout",
+        type=float,
+        default=60.0,
+        metavar="SECONDS",
+        help="per-page navigation timeout (default: 60)",
+    )
+    parser.add_argument(
+        "--retries",
+        type=int,
+        default=3,
+        metavar="N",
+        help="retries after a failed navigation or HTTP/network error (default: 3)",
+    )
+    parser.add_argument(
+        "-v",
+        "--verbose",
+        action="store_true",
+        help="log debug details, including pacing waits",
+    )
+    return parser
+
+
+def _validate(parser: argparse.ArgumentParser, args: argparse.Namespace) -> None:
+    if args.min_interval < 0 or args.jitter < 0 or args.source_interval < 0:
+        parser.error("intervals and jitter must be non-negative")
+    if args.max_load_more < 0:
+        parser.error("--max-load-more must be non-negative")
+    if args.limit < 0:
+        parser.error("--limit must be non-negative")
+    if args.timeout <= 0:
+        parser.error("--timeout must be greater than zero")
+    if args.retries < 1:
+        parser.error("--retries must be at least 1")
+
+
+def _configure_logging(verbose: bool) -> None:
+    logging.basicConfig(
+        level=logging.DEBUG if verbose else logging.INFO,
+        format="%(message)s",
+        stream=sys.stdout,
+        force=True,
+    )
+    # Playwright is chatty at DEBUG level and drowns out pacing messages.
+    logging.getLogger("asyncio").setLevel(logging.WARNING)
+
+
+def build_config(args: argparse.Namespace) -> ScrapeConfig:
+    return ScrapeConfig(
+        output_dir=Path(args.output_dir),
+        storage_state=None if args.no_auth else Path(args.storage_state),
+        rate_limit_state=DEFAULT_RATE_LIMIT_STATE,
+        headless=not args.headed,
+        block_resources=args.block_resources,
+        min_interval=args.min_interval,
+        jitter=args.jitter,
+        source_interval=args.source_interval,
+        max_load_more_batches=args.max_load_more,
+        page_timeout_ms=int(args.timeout * 1_000),
+        fetch_source_text=not args.no_source_text,
+        respect_robots=args.respect_robots,
+        max_retries=args.retries,
+    )
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    _validate(parser, args)
+    _configure_logging(args.verbose)
+
+    urls = [url.strip() for url in args.urls if url.strip()]
+    feeds = [feed.strip() for feed in args.feed if feed.strip()]
+    if not urls and not feeds:
+        parser.error("provide at least one article URL or --feed page")
+
+    config = build_config(args)
+    failures = 0
 
     try:
-        driver.get(url)
-        time.sleep(1)  # Wait for the page to load completely
-
-        # Print completion message
-        print("Page loaded successfully.")
-        
-        # Extract data using XPath
-        article_data = {}
-
-        # Extract Title
-        article_data['title'] = driver.find_element(By.ID, "titleArticle").text
-        print("Title extracted.")
-
-        # Extract Total Source
-        article_data['total_source'] = driver.find_element(By.XPATH, "/html/body/main/div/article/div/div/div[4]/div[1]/div/div/span[2]").text
-        print("Total Source extracted.")
-
-        # Extract Leaning Left
-        article_data['leaning_left'] = driver.find_element(By.XPATH, "/html/body/main/div/article/div/div/div[4]/div[1]/div/span[2]").text
-        print("Leaning Left extracted.")
-
-        # Extract Leaning Right
-        article_data['leaning_right'] = driver.find_element(By.XPATH, "/html/body/main/div/article/div/div/div[4]/div[1]/div/span[4]").text
-        print("Leaning Right extracted.")
-
-        # Extract Center
-        article_data['center'] = driver.find_element(By.XPATH, "//*[@id='main']/div/article/div/div/div[4]/div[1]/div/span[6]").text
-        print("Center extracted.")
-        
-        # Initialize summary points arrays
-        article_data['left_points'] = []
-        article_data['center_points'] = []
-        article_data['right_points'] = []
-        
-        # Check and extract Left Points
-        try:
-            left_summary_button = driver.find_element(By.ID, "left-summary-button")
-            if left_summary_button.is_enabled() and left_summary_button.is_displayed():
-                ActionChains(driver).move_to_element(left_summary_button).click().perform()
-                time.sleep(2)  # Wait for the points to load
-                article_data['left_points'] = [point.text for point in driver.find_elements(By.XPATH, "/html/body/main/div/article/div/div/div[1]/div[2]/div[3]/div/div/div[2]/div[1]/ul/li")]
-                print("Left Points extracted.")
-            else:
-                print("Left summary button not clickable. Keeping left_points as empty array.")
-        except Exception as e:
-            print("Left summary button not found. Keeping left_points as empty array.")
-
-        # Check and extract Center Points
-        try:
-            center_summary_button = driver.find_element(By.ID, "center-summary-button")
-            if center_summary_button.is_enabled() and center_summary_button.is_displayed():
-                ActionChains(driver).move_to_element(center_summary_button).click().perform()
-                time.sleep(2)  # Wait for the points to load
-                article_data['center_points'] = [point.text for point in driver.find_elements(By.XPATH, "/html/body/main/div/article/div/div/div[1]/div[2]/div[3]/div/div/div[2]/div[1]/ul/li")]
-                print("Center Points extracted.")
-            else:
-                print("Center summary button not clickable. Keeping center_points as empty array.")
-        except Exception as e:
-            print("Center summary button not found. Keeping center_points as empty array.")
-
-        # Check and extract Right Points
-        try:
-            right_summary_button = driver.find_element(By.ID, "right-summary-button")
-            if right_summary_button.is_enabled() and right_summary_button.is_displayed():
-                ActionChains(driver).move_to_element(right_summary_button).click().perform()
-                time.sleep(2)  # Wait for the points to load
-                article_data['right_points'] = [point.text for point in driver.find_elements(By.XPATH, "/html/body/main/div/article/div/div/div[1]/div[2]/div[3]/div/div/div[2]/div[1]/ul/li")]
-                print("Right Points extracted.")
-            else:
-                print("Right summary button not clickable. Keeping right_points as empty array.")
-        except Exception as e:
-            print("Right summary button not found. Keeping right_points as empty array.")
-
-        # Click on the 'more-stories' button until it disappears or becomes non-clickable
-        stories_loaded = 0
-        with tqdm(desc="Loading more stories", unit="batch") as pbar:
-            while True:
+        with GroundNewsScraper(config) as scraper:
+            targets = list(urls)
+            for feed in feeds:
                 try:
-                    # Check if the "more stories" button exists and is clickable
-                    more_stories_button = WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.ID, "more-stories")))
-                    ActionChains(driver).move_to_element(more_stories_button).click().perform()
-                    time.sleep(2)
-                    stories_loaded += 1
-                    pbar.update(1)
-                    pbar.set_postfix({"Batches loaded": stories_loaded})
-                except:
-                    pbar.set_description("Finished loading stories")
-                    break
+                    found = scraper.scrape_feed(feed, limit=args.limit)
+                except ScrapeError as exc:
+                    failures += 1
+                    logger.error("Failed to read feed %s: %s", feed, exc)
+                except PlaywrightError as exc:
+                    failures += 1
+                    logger.error("Browser error while reading feed %s: %s", feed, exc)
+                else:
+                    targets.extend(found)
 
-        # Extract Sources using the correct XPath structure
-        # Extract Sources using the correct XPath structure
-        article_data['sources'] = []
+            targets = list(dict.fromkeys(targets))
+            if not targets:
+                logger.error("No article URLs to scrape")
+                return 1
+            logger.info("Scraping %d article(s)", len(targets))
 
-        # Find all source elements
-        source_elements = driver.find_elements(By.ID, "article-summary")
-
-        for source_element in tqdm(source_elements, desc="Processing sources", unit="source"):
-            try:
-                source = {}
-                
-                # Extract news title from the h4 element, relative to the article-summary
-                news_title_element = source_element.find_element(By.XPATH, ".//a/h4")
-                source['news_title'] = news_title_element.text               
-                
-                
-                # Extract news link from the anchor tag, relative to the article-summary
-                news_link_element = source_element.find_element(By.XPATH, "./div/a")
-                source['news_link'] = news_link_element.get_attribute('href')
-                
-                # Extract bias from the bias element, relative to the article-summary
+            for url in targets:
                 try:
-                    bias_element = source_element.find_element(By.XPATH, ".//a[contains(@id, 'article-source-bias')]/div")
-                    source['bias'] = bias_element.text
-                except Exception as e:
-                    source['bias'] = "unknown"
-                    print(f"  - Error extracting bias: {e}")
-                    
-                link = str(source['news_link'])
-                
-                downloaded = trafilatura.fetch_url(link)
-                
-                fulltext = trafilatura.extract(downloaded)
+                    path = scraper.scrape(url)
+                except ScrapeError as exc:
+                    failures += 1
+                    logger.error("Failed to scrape %s: %s", url, exc)
+                except PlaywrightError as exc:
+                    failures += 1
+                    logger.error("Browser error while scraping %s: %s", url, exc)
+                except OSError as exc:
+                    failures += 1
+                    logger.error("Could not save the result for %s: %s", url, exc)
+                else:
+                    print(f"Data successfully saved to {path}")
+    except RateLimitError as exc:
+        logger.error("Stopping: %s", exc)
+        return 1
+    except PlaywrightError as exc:
+        logger.error("Playwright could not start: %s", exc)
+        logger.error("Install the browser once with: uv run playwright install chromium")
+        return 1
+    except KeyboardInterrupt:
+        logger.warning("Interrupted")
+        return 130
 
-                source['text'] = fulltext
+    return 1 if failures else 0
 
-                article_data['sources'].append(source)
-                
-            except Exception as e:
-                print(f"  - Error extracting source data: {e}")
-                continue
-
-        print(f"Sources extracted. Total: {len(article_data['sources'])} sources")
-
-
-        # Generate unique Story ID
-        story_id = f"GN_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{str(uuid.uuid4())[:8]}"
-        sid = str(story_id)
-        print(f"Generated Story ID: {sid}")
-
-        # Prepare structured data for JSON
-        structured_data = {
-            'story_id': sid,
-            'metadata': {
-                'title': article_data.get('title', ''),
-                'timestamp': datetime.now().isoformat(),
-                'url': url
-            },
-            'bias_distribution': {
-                'total_sources': article_data.get('total_source', ''),
-                'leaning_left': article_data.get('leaning_left', ''),
-                'center': article_data.get('center', ''),
-                'leaning_right': article_data.get('leaning_right', '')
-            },
-            'perspective_summaries': {
-                'left': article_data.get('left_points', []),
-                'center': article_data.get('center_points', []),
-                'right': article_data.get('right_points', [])
-            },
-            'sources': article_data.get('sources', [])
-        }
-
-        # Save to JSON file in json/ directory
-        json_filename = os.path.join('json', f"{sid}.json")
-        
-        try:
-            # Ensure json directory exists
-            os.makedirs('json', exist_ok=True)
-            
-            # Write JSON data with proper formatting
-            with open(json_filename, 'w', encoding='utf-8') as file:
-                json.dump(structured_data, file, indent=2, ensure_ascii=False)
-                print(f"Data successfully saved to {json_filename}")
-                
-        except PermissionError:
-            print(f"Permission denied: Cannot write to '{json_filename}'. Please check file permissions.")
-        except Exception as e:
-            print(f"Error saving to JSON: {e}")
-
-    except Exception as e:
-        print(f"An error occurred: {e}")
-    finally:
-        driver.quit()
-        print("Browser closed.")
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        url = sys.argv[1]
-        fetch_article_data(url)
-    else:
-        print("Please provide a URL as a command-line argument.")
+    raise SystemExit(main())

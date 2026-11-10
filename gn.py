@@ -1,5 +1,6 @@
 import subprocess
 import os
+import sys
 import time  # Importing time module for the delay
 
 # Get the current directory of this script
@@ -91,12 +92,15 @@ activate_command = '.venv/Scripts/activate'
 # Loop over each URL in the list
 # Open terminal, activate the virtual environment, and run the command
 try:
-    # Start the subprocess to open terminal, activate virtual environment, and run commands sequentially
+    # One process per URL: g.py enforces the request pacing across processes.
     for url in gn_new:
-        subprocess.run(f'cd {current_dir} && python g.py "{url}"', shell=True)
+        result = subprocess.run([sys.executable, "g.py", url], cwd=current_dir)
+        if result.returncode != 0:
+            print(f"Scrape failed for {url}; not committing.")
+            continue
         time.sleep(1)
-        subprocess.run("git add .", shell=True)
-        subprocess.run(f"git commit -m \"Fetch news article {url}\"", shell=True)
+        subprocess.run(["git", "add", "."], cwd=current_dir)
+        subprocess.run(["git", "commit", "-m", f"Fetch news article {url}"], cwd=current_dir)
         time.sleep(1)  # Add 1 second delay between each URL
 except Exception as e:
     print(f"Error: {e}")

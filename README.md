@@ -1,142 +1,181 @@
 # Ground News Scraper 🌍📰
 
-A powerful web scraping tool for extracting comprehensive news data from Ground.news articles, designed for media bias analysis and research purposes.
+A web scraper for extracting comprehensive news data from [Ground.news](https://ground.news) articles, designed for media bias analysis and research purposes. Browser automation uses **Playwright** (Chromium), with request pacing built in so a batch run does not get the client rate-limited or banned.
 
-![Python](https://img.shields.io/badge/python-v3.7+-blue.svg)
+![Python](https://img.shields.io/badge/python-3.12+-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Status](https://img.shields.io/badge/status-active-success.svg)
 
 ## 🎯 Overview
 
-Ground News Scraper is a comprehensive tool that extracts detailed information from Ground.news articles, including:
-- **Political bias distributions** across news sources
+The scraper extracts, for each Ground News story:
+
+- **Political bias distribution** across news sources
 - **Perspective summaries** from left, center, and right viewpoints
 - **Source metadata** with bias classifications
-- **Article content** and publication details
-
-Perfect for researchers, journalists, and data analysts studying media bias and news coverage patterns.
+- **Article text** for every cited source, extracted with `trafilatura`
 
 ## ✨ Features
 
-### 🔍 Data Extraction
-- **Multi-perspective Analysis**: Extracts left, center, and right political viewpoints
-- **Source Tracking**: Collects information from all news sources covering a story
-- **Bias Classification**: Captures bias ratings for each source
-- **Comprehensive Metadata**: Article titles, URLs, timestamps, and source counts
+### 🔍 Data extraction
+- **Multi-perspective analysis**: left, center, and right viewpoint summaries
+- **Source tracking**: every outlet covering the story, including its bias rating
+- **Full article text**: downloaded from each cited outlet and extracted into the JSON
+- **Dynamic loading**: clicks "load more stories" until the source list is complete
+- **Overlay handling**: dismisses the onboarding/subscribe dialog that otherwise blocks clicks
 
-### 🖥️ User Interfaces
-- **GUI Application**: User-friendly tkinter interface for easy interaction
-- **Command Line**: Direct script execution for automation and batch processing
-- **Real-time Progress**: Live console output and progress tracking
+### 🚦 Polite by default
+- **Request pacing shared across processes**: a state file and lock make the wait apply to every scraper process on the machine, including the `gn.py` batch runner
+- **Randomised intervals**: per-host minimum interval plus jitter, so traffic is not machine-regular
+- **Throttle-aware retries**: `429`/`5xx` responses back off exponentially and honour `Retry-After`
+- **Optional `robots.txt` checks** for cited outlets (`--respect-robots`)
+- **Sequential only**: one browser context, one request at a time
 
-### 📊 Data Management
-- **JSON Storage**: Structured data saved in JSON format for easy processing
-- **Unique Story IDs**: Automatic generation of unique identifiers for each article
-- **Data Analysis Tools**: Built-in scripts for analyzing collected data
+### 🖥️ Interfaces
+- **GUI application**: tkinter interface with live console output
+- **Command line**: one or more URLs per run, with configurable pacing
+- **Optional login**: reuse a Ground News session through a saved Playwright storage state
 
-## 🏗️ Project Structure
+### 📊 Data management
+- **JSON storage**: one file per story, written atomically
+- **Unique story IDs**: timestamp plus random suffix
+- **Analysis helpers**: scripts for summarising and exporting the collected data
+
+## 🏗️ Project structure
 
 ```
-GN_fetch/
-├── g.py                    # Main scraper engine (Selenium-based)
-├── gui.py                  # GUI application interface
-├── a.py                    # Data analysis and processing tool
-├── json/                   # Directory for scraped data
-│   ├── GN_20250820_*.json  # Individual article data files
-│   └── ...
-└── data/                   # Additional data storage
+Ground-News-Scraper/
+├── scraper.py          # Playwright scraper and extraction helpers
+├── rate_limit.py       # Cross-process request pacing and backoff
+├── g.py                # Command-line entry point (used by the GUI and gn.py)
+├── login.py            # Saves a Ground News session for authenticated runs
+├── gui.py              # Tkinter interface
+├── gn.py               # Batch runner over a list of URLs
+├── a.py                # Bias/text coverage analysis
+├── asm.py              # Flat CSV export of all sources
+├── csv_make.py         # Story/source/perspective CSV export
+├── tests/              # pytest suite (rate limiting, extraction, schema)
+├── json/               # Story JSON output (default)
+├── state/              # Rate limit state (created at runtime, gitignored)
+└── auth/               # Saved session (created by login.py, gitignored)
 ```
 
-## 🚀 Quick Start
+## 🚀 Quick start
 
-### Prerequisites
+Requires Python 3.12+ and [uv](https://docs.astral.sh/uv/).
 
 ```bash
-# Required Python packages
-pip install selenium
-pip install webdriver-manager
-pip install tkinter  # Usually included with Python
+uv sync
+uv run playwright install chromium
 ```
 
-### Installation
+`uv sync` installs Playwright, trafilatura, tqdm, and the test dependencies. The second command downloads Chromium once; it is required by both the scraper and `login.py`.
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/sakhadib/Ground-News-Scraper.git
-   cd Ground-News-Scraper
-   ```
+### Run the GUI
 
-2. **Install dependencies**
-   ```bash
-   pip install selenium webdriver-manager
-   ```
+```bash
+uv run python gui.py
+```
 
-3. **Run the application**
-   ```bash
-   # GUI Interface
-   python gui.py
-   
-   # Command Line Interface
-   python g.py "https://ground.news/article/your-article-url"
-   ```
+### Run the command line
+
+```bash
+uv run python g.py "https://ground.news/article/your-article-url"
+```
 
 ## 💻 Usage
 
-### GUI Application
-
-1. **Launch the GUI**
-   ```bash
-   python gui.py
-   ```
-
-2. **Enter Ground.news URL** in the input field
-
-3. **Click "Fetch Data"** to start scraping
-
-4. **Monitor progress** in the console output
-
-5. **Access results** in the `json/` directory
-
-### Command Line Interface
+### Command line
 
 ```bash
-# Basic usage
-python g.py "https://ground.news/article/your-article-url"
+# One URL
+uv run python g.py "https://ground.news/article/..."
 
-# The script will automatically:
-# - Launch Chrome browser
-# - Navigate to the article
-# - Extract all data points
-# - Save results to json/ directory
+# Several URLs in one browser session (pacing still applies between them)
+uv run python g.py URL1 URL2 URL3
+
+# Watch the browser, and slow down further
+uv run python g.py URL --headed --min-interval 8 --jitter 3
+
+# Skip downloading full text for each cited source
+uv run python g.py URL --no-source-text
 ```
 
-### Data Analysis
+Useful options (`uv run python g.py --help` lists them all):
+
+| Option | Default | Meaning |
+| --- | --- | --- |
+| `--feed URL` | — | Topic/feed page whose article links are scraped (repeatable) |
+| `--limit N` | `0` (all) | Articles to take from each `--feed` page |
+| `--output-dir PATH` | `json/` next to the scripts | Where story JSON files are written |
+| `--headed` | off | Show the browser window instead of running headless |
+| `--min-interval SECONDS` | `4.0` | Minimum delay between requests to the same host |
+| `--jitter SECONDS` | `2.0` | Random extra delay added to `--min-interval` |
+| `--source-interval SECONDS` | `1.5` | Minimum delay between any two cited-article fetches |
+| `--max-load-more BATCHES` | `40` | Cap on "load more stories" clicks per article |
+| `--no-source-text` | off | Do not download cited articles |
+| `--respect-robots` | off | Skip cited articles whose `robots.txt` disallows fetching |
+| `--block-resources` | off | Block images, fonts, and media |
+| `--timeout SECONDS` | `60` | Per-page navigation timeout |
+| `--retries N` | `3` | Retries after a failed navigation or HTTP/network error |
+| `--no-auth` | off | Ignore any saved session |
+| `-v`, `--verbose` | off | Log debug details, including pacing waits |
+
+The process exits with status `1` if any URL failed, so the GUI and batch runner can report failures.
+
+### Topic feeds
+
+A topic page such as `https://ground.news/interest/stock-markets` is a feed, not an article, so it cannot be passed as a plain URL. Use `--feed`:
 
 ```bash
-# Analyze collected data
-python a.py
+# Read the feed and scrape up to 5 of the stories it lists
+uv run python g.py --feed "https://ground.news/interest/stock-markets" --limit 5
 
-# Enter the path to your json/ directory when prompted
-# View bias distribution statistics and source counts
+# Cheap discovery pass: no per-source article text
+uv run python g.py --feed "https://ground.news/interest/stock-markets" --limit 5 --no-source-text
 ```
 
-## 📋 Data Structure
+The scraper opens the feed, collects its `/article/` links, de-duplicates them, and then scrapes each one with the normal pipeline and pacing. Only the links present on the first page load are collected; the feed is not scrolled or paginated. `--limit 0` (the default) scrapes every link found, which can take hours with source text enabled.
 
-Each scraped article generates a JSON file with the following structure:
+### Optional: use your Ground News account
+
+Anonymous scraping works, but Ground News shows an onboarding/subscribe dialog and may limit some content for logged-out visitors. To reuse your session:
+
+```bash
+uv run python login.py
+```
+
+A browser window opens. Log in there (including two-factor), return to the terminal, and press Enter. The script writes `auth/storage_state.json`; `g.py` picks it up automatically on later runs. You never give this code your password: it stores the browser session, so treat the file like a password. It is gitignored. Delete it to log out.
+
+### Batch runs
+
+`gn.py` iterates a list of URLs and runs `g.py` once per URL. Because pacing state lives in `state/rate_limit.json`, the delay applies across those processes too.
+
+### Data analysis
+
+```bash
+uv run python a.py        # bias/source summary
+uv run python asm.py      # flat asm.csv of every source
+uv run python csv_make.py # dataset/*.csv exports
+```
+
+## 📋 Data structure
+
+Each scraped article generates a JSON file:
 
 ```json
 {
-  "story_id": "GN_20250820_abc12345",
+  "story_id": "GN_20250820_213302_abc12345",
   "metadata": {
     "title": "Article Title",
     "timestamp": "2025-08-20T21:33:02.620020",
     "url": "https://ground.news/article/..."
   },
   "bias_distribution": {
-    "total_sources": "134",
-    "leaning_left": "18",
-    "center": "21",
-    "leaning_right": "15"
+    "total_sources": "105",
+    "leaning_left": "40",
+    "center": "27",
+    "leaning_right": "13"
   },
   "perspective_summaries": {
     "left": ["Left perspective point 1", "..."],
@@ -146,133 +185,88 @@ Each scraped article generates a JSON file with the following structure:
   "sources": [
     {
       "news_title": "Source Article Title",
-      "news_link": "https://source-url.com",
+      "news_link": "https://source-url.com/story",
       "bias": "Lean Right",
-      "source_name": "Source Name"
+      "text": "Extracted article text, or null when the outlet could not be read"
     }
   ]
 }
 ```
 
-## 🔧 Technical Details
+`text` is `null` when the outlet blocks the request (403), returns a non-HTML document, or `--no-source-text` is used. One unreachable source does not abort the story.
 
-### Core Components
+## 🔧 Technical details
 
-#### `g.py` - Main Scraper Engine
-- **Selenium WebDriver**: Automated browser interaction
-- **XPath Extraction**: Precise element targeting
-- **Dynamic Loading**: Handles "Load More" functionality
-- **Error Handling**: Robust exception management
-- **Chrome Driver**: Automatic driver management
+### Playwright instead of Selenium
 
-#### `gui.py` - Graphical Interface
-- **Tkinter Framework**: Cross-platform GUI
-- **Threading**: Non-blocking UI operations
-- **Real-time Logging**: Live progress updates
-- **Input Validation**: URL format checking
-- **Process Management**: Start/stop controls
+- One browser and context are reused for the whole run; each URL is a fresh navigation.
+- Waits are event-driven (`wait_for_selector`) rather than fixed sleeps.
+- Clicks go through Playwright's actionability checks, with an automatic retry after dismissing a late overlay.
+- The user agent matches the Chromium build Playwright launched, and `navigator.webdriver` is masked.
+- The extractor uses the same absolute XPaths the Selenium version used, because they still match the live site. The headline and source-card selectors have semantic fallbacks; the four coverage selectors remain single absolute XPaths, because no reliable semantic equivalent was found.
 
-#### `a.py` - Data Analysis
-- **JSON Processing**: Multi-encoding support
-- **Statistical Analysis**: Bias distribution calculations
-- **Data Aggregation**: Cross-article summaries
-- **Error Recovery**: Handles corrupted files
+### Rate limiting
 
-### Browser Automation Features
+`rate_limit.FileRateLimiter` stores the next allowed request time per key in `state/rate_limit.json` and protects it with an OS file lock (`state/rate_limit.json.lock`):
 
-- **Maximized Window**: Ensures element visibility
-- **Explicit Waits**: Reliable element loading
-- **Action Chains**: Complex user interactions
-- **Dynamic Content**: Handles JavaScript-loaded content
-- **Element Clicking**: Automated perspective switching
+- **Per host**: every navigation and every cited-article fetch to a host waits `min_interval + random(0, jitter)` seconds. Defaults are 4–6 seconds.
+- **Global floor**: cited-article fetches also share a 1.5–2.5 second floor, so a story with a hundred outlets cannot burst.
+- **Backoff**: `429`, `500`, `502`, `503`, and `504` are retried with exponential backoff (30s, 60s, 120s…), using `Retry-After` when present and clamping any single sleep to 300 seconds. Transient network errors are retried the same way.
+- **Fail safe**: if the lock cannot be acquired in time, the run aborts with a clear error rather than scraping unpaced.
+- **Cross-process**: the batch runner spawns one process per URL; they all share the same state file, so the pacing is not defeated by process boundaries.
 
-## 📊 Use Cases
+Ground News' `robots.txt` allows `User-Agent: *` on `/`, and the scraper only fetches article pages. `--respect-robots` additionally checks each cited outlet before downloading its text.
 
-### Research Applications
-- **Media Bias Studies**: Analyze coverage patterns across political spectrum
-- **Source Diversity Analysis**: Track source representation in news stories
-- **Temporal Analysis**: Study how coverage changes over time
-- **Comparative Studies**: Compare bias distributions across topics
+### Source text extraction
 
-### Data Science Projects
-- **Machine Learning**: Train models on bias-labeled news data
-- **Natural Language Processing**: Analyze perspective-based text differences
-- **Network Analysis**: Study source relationships and citation patterns
-- **Visualization**: Create bias distribution charts and graphs
+Cited articles are fetched with the browser's request context (same user agent, cookies, redirect handling), then parsed with `trafilatura`. Responses that are not HTML are skipped. Network failures are logged and recorded as `null` text.
 
-### Journalism Tools
-- **Source Verification**: Cross-reference multiple news sources
-- **Bias Awareness**: Understand perspective diversity in coverage
-- **Story Tracking**: Monitor how stories develop across sources
-- **Research Assistance**: Gather comprehensive source lists
+## ⚠️ Important notes
 
-## ⚠️ Important Notes
+### Ethical usage
+- **Pacing is on by default**; raising it (or lowering it) is your responsibility.
+- **`--respect-robots`** is available for outlets whose `robots.txt` disallows crawling.
+- **Academic use**: intended for research; credit Ground.news as the source of the story data.
+- **Account use**: automated access may conflict with Ground News' terms. A logged-in session is your account's responsibility; keep `auth/storage_state.json` private.
 
-### Ethical Usage
-- **Respect robots.txt**: Follow Ground.news terms of service
-- **Rate Limiting**: Don't overwhelm servers with requests
-- **Academic Use**: Primarily intended for research purposes
-- **Data Attribution**: Credit Ground.news as data source
+### Technical considerations
+- **Chromium**: install it once with `uv run playwright install chromium`.
+- **Network**: the scraper needs a stable connection; some outlets block automated requests regardless of pacing.
+- **Selectors**: Ground News is a Next.js app whose DOM can change. If a field disappears, update the constants at the top of `scraper.py`.
+- **Runtime**: pacing is the point. A story with ~100 sources can take several minutes.
 
-### Technical Considerations
-- **Chrome Dependency**: Requires Chrome browser installation
-- **Internet Connection**: Stable connection needed for scraping
-- **File Permissions**: Ensure write access to json/ directory
-- **Memory Usage**: Large datasets may require substantial RAM
+## 🧪 Tests
 
-### Limitations
-- **Dynamic Content**: Some elements may load differently
-- **Site Changes**: XPath selectors may need updates if site structure changes
-- **JavaScript Requirements**: Requires enabled JavaScript for full functionality
-- **Rate Limits**: May encounter rate limiting with excessive requests
+```bash
+uv run pytest
+```
+
+The suite covers the rate limiter (persistence, lock handling, stale locks, backoff, `Retry-After`), the JSON schema, and the extraction helpers against a local DOM fixture. The fixture tests skip automatically if Chromium is not installed.
 
 ## 🤝 Contributing
 
-We welcome contributions! Here's how you can help:
+Contributions are welcome:
 
-1. **Fork the repository**
-2. **Create a feature branch** (`git checkout -b feature/AmazingFeature`)
-3. **Commit your changes** (`git commit -m 'Add some AmazingFeature'`)
-4. **Push to the branch** (`git push origin feature/AmazingFeature`)
-5. **Open a Pull Request**
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Open a pull request
 
-### Areas for Contribution
-- **Error Handling**: Improve robustness
-- **Data Export**: Add CSV/Excel export options
-- **Visualization**: Create data visualization tools
-- **Performance**: Optimize scraping speed
-- **Documentation**: Enhance code documentation
+## 👤 Contributors
+
+- **aldass** ([@aldass](https://github.com/aldass)) — Playwright port, cross-process rate limiting, topic-feed support
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT. See the [LICENSE](LICENSE) file.
 
 ## 🙏 Acknowledgments
 
-- **Ground.news**: For providing comprehensive news bias analysis
-- **Selenium Project**: For powerful web automation capabilities
-- **Chrome DevTools**: For XPath development and debugging
-- **Python Community**: For excellent libraries and documentation
-
-## 📞 Support
-
-For questions, issues, or suggestions:
-
-- **GitHub Issues**: [Create an issue](https://github.com/sakhadib/Ground-News-Scraper/issues)
-- **Documentation**: Check this README and code comments
-- **Community**: Join discussions in the Issues section
-
-## 🔮 Future Enhancements
-
-- **API Integration**: Direct Ground.news API support (if available)
-- **Batch Processing**: Multiple URL processing
-- **Export Options**: CSV, Excel, and database export
-- **Scheduling**: Automated periodic scraping
-- **Advanced Analytics**: Built-in statistical analysis tools
-- **Docker Support**: Containerized deployment option
+- **Ground.news** for the coverage and bias data
+- **Playwright** for browser automation
+- **trafilatura** for article text extraction
+- **Python community** for the supporting libraries
 
 ---
 
-**Happy Scraping! 🚀**
-
-*Remember to use this tool responsibly and in accordance with Ground.news terms of service.*
+*Use this tool responsibly and in accordance with Ground News' terms of service.*

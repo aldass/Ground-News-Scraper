@@ -1,2 +1,13 @@
 .venv/
 venv/
+
+# Playwright login session (contains cookies; treat it like a password)
+auth/
+
+# Cross-process rate limit state
+state/
+
+# Python and test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/

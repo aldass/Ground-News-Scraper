@@ -1,0 +1,888 @@
+{
+  "story_id": "GN_20261109_201724_c85adb0f",
+  "metadata": {
+    "title": "Nvidia shares slide as US tech giant investigates CEO's affair with suspected Chinese spy",
+    "timestamp": "2026-11-09T20:17:24.656077",
+    "url": "https://ground.news/article/nvidia-shares-slide-as-us-tech-giant-investigates-ceos-affair-with-suspected-chinese-spy_cefacc"
+  },
+  "bias_distribution": {
+    "total_sources": "216",
+    "leaning_left": "30",
+    "center": "73",
+    "leaning_right": "30"
+  },
+  "perspective_summaries": {
+    "left": [
+      "Nvidia shares fell roughly 7% after CEO Jensen Huang acknowledged an extramarital affair and the company announced an investigation into reports that he was targeted by a foreign intelligence effort.",
+      "Nvidia said its board had “no reason to believe” that national security or company secrets were compromised, but would examine all available information.",
+      "The New York Times reported that U.S. intelligence determined a business executive was gathering information for China, while China’s Foreign Ministry called the allegations a smear campaign.",
+      "Analyst Dan Ives said Huang was central to Nvidia’s success and warned that the investigation could create a near-term overhang on the company’s shares."
+    ],
+    "center": [
+      "Nvidia shares fell approximately 7% on Monday following reports about CEO Jensen Huang's personal life and a possible foreign intelligence investigation.",
+      "The company is investigating reports that Huang was the target of a foreign intelligence effort.",
+      "The decline comes amid growing concerns about the sustainability of AI investments and data center expansion, causing technology stocks to fall.",
+      "Nvidia shares are down more than 20% from their peak, while the Nasdaq entered correction territory after dropping over 10% from its recent high."
+    ],
+    "right": [
+      "Nvidia shares fell sharply after the company opened an independent investigation into whether CEO Jensen Huang was targeted by a foreign intelligence effort.",
+      "Jensen Huang acknowledged being unfaithful to his wife and apologized, while Nvidia’s board said it had no reason to believe company or U.S. national-security information had been compromised.",
+      "Reports linked Huang to Alice Huang, a former Megaspeed executive whom U.S. authorities reportedly identified as a Chinese intelligence asset; China called the allegations “entirely baseless vilification and smearing.”",
+      "Madison Huang canceled planned meetings in Seoul, but South Korea expected no disruption to contracted Nvidia chip deliveries."
+    ]
+  },
+  "sources": [
+    {
+      "news_title": "How the Nvidia controversy impacts the economy and AI",
+      "news_link": "https://www.cascadepbs.org/show/newshour/extras/what-china-stands-to-gain-from-nvidia-s-ceo-s-alleged-affair-1794266712/",
+      "bias": "Lean Left",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia shares sink as board launches probe into Jensen Huang's affair",
+      "news_link": "https://www.axios.com/2026/11/09/nvidia-shares-stock-jensen-huang",
+      "bias": "Lean Left",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia's shares slide as chip giant probes CEO over spy claims",
+      "news_link": "https://www.usatoday.com/story/tech/2026/11/09/nvidias-shares-slide-during-ceo-jensen-huang-probe-over-spy-claims/92691593007/",
+      "bias": "Lean Left",
+      "text": null
+    },
+    {
+      "news_title": "'Jensen Huang Risk': 258 Trillion Won Evaporates From Nvidia's Market Cap... All-Out Plummet",
+      "news_link": "https://www.yna.co.kr/view/AKR20261110017900009",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "The race is on to sue Nvidia",
+      "news_link": "https://techcrunch.com/2026/11/09/the-race-is-on-to-sue-nvidia/",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia scandal creates risks for whole AI industry, not just CEO",
+      "news_link": "https://www.japantimes.co.jp/business/2026/11/10/tech/nvidia-scandal-ai-industry-ceo/",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "As Nvidia’s stock falls, here’s what Wall Street has to say about the Jensen Huang scandal",
+      "news_link": "https://www.marketwatch.com/story/how-wall-street-is-reacting-to-the-news-of-nvidias-jensen-huang-investigation-into-spy-claims-d8c839ab?mod=mw_rss_topstories",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia shares fall after report of CEO investigation",
+      "news_link": "https://www.4029tv.com/article/nvidia-stocks-fall-ceo-investigation/74376804",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "The Nvidia CEO's Cheating Scandal Just Tanked US Markets, And These 38 Memes Are Absolutely Ruthless",
+      "news_link": "https://www.buzzfeed.com/mariamsharia/jensen-huang-nvidia-ceo-cheating-scandal-memes",
+      "bias": "Lean Left",
+      "text": null
+    },
+    {
+      "news_title": "Its CEO at the Heart of a Scandal: Nvidia's Title Drops by 6%",
+      "news_link": "https://www.tvanouvelles.ca/2026/11/09/son-pdg-au-coeur-dun-scandale-le-titre-de-nvidia-chute-de-6",
+      "bias": "Lean Left",
+      "text": null
+    },
+    {
+      "news_title": "Watch Nvidia Investor: Governance Now Part of the Valuation",
+      "news_link": "https://www.bloomberg.com/news/videos/2026-11-09/nvidia-investor-governance-now-part-of-the-valuation-video",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia CEO’s lover investigated as Chinese spy; She boasted of access to AI chips",
+      "news_link": "https://worldtribune.com/nvidia-ceos-lover-investigated-as-chinese-spy-she-boasted-of-access-to-ai-chips/",
+      "bias": "Right",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia shares open down more than 8% after it announces probe of CEO",
+      "news_link": "https://www.nzherald.co.nz/business/nvidia-shares-open-down-more-than-8-after-it-announces-probe-of-ceo/GPSDM76PNZE3NAM4INFEFHLNIE/",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Shares Fall by 5%, Following the Initiation of an Investigation Into Jensen Huang's Relationship with an Alleged Chinese Spy",
+      "news_link": "https://www.news.ro/economic/actiunile-nvidia-scad-cu-5-dupa-declansarea-unei-anchete-privind-relatia-lui-jensen-huang-cu-o-presupusa-spioana-chineza-1922404609002026111922976763",
+      "bias": "Lean Left",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia stock falls after company opens probe into CEO Jensen Huang",
+      "news_link": "https://www.goodmorningamerica.com/news/story/nvidia-stock-falls-after-company-opens-probe-ceo-137970524",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia’s Stock Price Drops After Investigation Into CEO Jensen Huang",
+      "news_link": "https://intelli.news/2026/11/09/nvidias-stock-price-drops-after-investigation-into-ceo-jensen-huang/",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "If an Escapade Costs 250 Billion Dollars",
+      "news_link": "https://www.krone.at/4369590",
+      "bias": "Right",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia shares tumble as the company says it's investigating CEO Jensen Huang",
+      "news_link": "https://www.npr.org/2026/11/09/nx-s1-6034478/nvidia-shares-tumble-as-the-company-says-its-investigating-ceo-jensen-huang",
+      "bias": "Lean Left",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia shares tumble after spy probe announced",
+      "news_link": "https://www.france24.com/en/video/20261109-nvidia-shares-tumble-after-spy-probe-announced",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Peking? The Mistress of the CEO of the US Giant Nvidia, Worth $4,500 Billion, Could Be a Chinese Spy",
+      "news_link": "https://www.ladepeche.fr/2026/11/09/piege-par-pekin-la-maitresse-du-pdg-du-geant-americain-nvidia-qui-vaut-4-500-milliards-de-dollars-pourrait-etre-une-espionne-chinoise-13643666.php",
+      "bias": "Lean Left",
+      "text": null
+    },
+    {
+      "news_title": "Chinese Spy Scandal and Nvidia Infidelity Scandal: the Future of Artificial Intelligence Is Also at Stake",
+      "news_link": "https://www.origo.hu/techbazis/2026/11/nvidia-kembotrany-kina-ai-chipek-vizsgalat",
+      "bias": "Right",
+      "text": null
+    },
+    {
+      "news_title": "NVIDIA Shares Plunge After CEO's Scandal with Alleged Chinese Mistress and Spy Revealed - iefimerida.gr",
+      "news_link": "https://www.iefimerida.gr/kosmos/metohes-nvidia-skandalo-ceo-kineza-eromeni-boytia",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "Was Nvidia's Boss Spied on by His Mistress?",
+      "news_link": "https://www.tf1info.fr/international/videos/video-le-patron-de-nvidia-a-t-il-ete-espionne-par-sa-maitresse-79833-2474847.html",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Understand Nvidia's CEO Investigation and Espionage Allegations",
+      "news_link": "https://valor.globo.com/publicacoes/especiais/inteligencia-artificial/noticia/2026/11/09/entenda-a-investigacao-sobre-o-ceo-da-nvidia-e-alegacoes-de-espionagem.ghtml",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia shares slide amid spy claims",
+      "news_link": "https://www.taipeitimes.com/News/front/archives/2026/11/10/2003867459",
+      "bias": "Lean Left",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Falls 6.6% on the Stock Exchange Following the Involvement of Its Executive Director with a Supposed Chinese Spy",
+      "news_link": "https://www.nacion.com/economia/nvidia-cae-un-66-en-bolsa-tras-la-implicacion-de/VPW637PEH5EURBFZVOWWAWOIUY/story/",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia's Shares Fall More than 4% Due to His CEO's Controversy with Chinese Spy; Wall Street Starts in Green",
+      "news_link": "https://www.elfinanciero.com.mx/mercados/2026/11/09/bmv-wall-street-hoy-9-de-noviembre-de-2026/",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Loses 312 Billion Euros in Market Value Due to Top Executive's Affair with Woman Allegedly a Chinese Spy.",
+      "news_link": "https://www.volkskrant.nl/economie/nvidia-verliest-312-miljard-euro-aan-beurswaarde-door-affaire-van-topman-met-vrouw-die-chinese-spion-zou-zijn~b22ded7e/",
+      "bias": "Lean Left",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Shares Also Lose Significantly at the Start of Trading in New York",
+      "news_link": "https://www.spiegel.de/wirtschaft/unternehmen/nvidia-aktien-verlieren-auch-zum-handelsstart-in-new-york-deutlich-a-4c20ed90-2b37-48b9-8f13-6230f8a0459d",
+      "bias": "Lean Left",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Shares Plunge over 6% as Board Probes Alleged Foreign Intelligence Targeting of CEO Huang",
+      "news_link": "https://www.aa.com.tr/en/economy/nvidia-shares-plunge-over-6-as-board-probes-alleged-foreign-intelligence-targeting-of-ceo-huang/4117516",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia stock slides after company launches probe into Huang",
+      "news_link": "https://thehill.com/policy/technology/6207787-jensen-huang-affair-nvidia-stock-falls/",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "We Are Now Learning in Real Time Whether the Stock Market Cares About an AI Executive Admitting to an Affair With an Alleged Chinese Spy",
+      "news_link": "https://futurism.com/artificial-intelligence/nvidia-stock-lurches-downward-ceo-affair",
+      "bias": "Lean Left",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Drops by More than 8% at the Opening of Wall Street, Pinned by the Spying Affair Involving Her Boss",
+      "news_link": "https://www.lefigaro.fr/secteur/high-tech/nvidia-chute-de-plus-de-8-a-l-ouverture-de-wall-street-plombe-par-l-affaire-d-espionnage-impliquant-son-patron-20261109",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Share Price Drops Sharply on US Stock Exchange After CEO Spy Affair",
+      "news_link": "https://nos.nl/artikel/2638746-koers-nvidia-hard-omlaag-op-amerikaanse-beurs-na-spionnen-affaire-van-ceo",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Stock Slides After Chip Giant Probes Alleged Chinese Intelligence Operation Targeting CEO",
+      "news_link": "https://www.theepochtimes.com/business/nvidia-stock-slides-after-chip-giant-probes-alleged-chinese-intelligence-operation-targeting-ceo-6122450",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia shares plunge 7.5% as $335 billion wiped off market value",
+      "news_link": "https://adaderana.lk/news/251345",
+      "bias": "Lean Left",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia slumps after a ‘foreign intelligence’ probe initiated by AI company into CEO Jensen Huang - WSVN 7News | Miami News, Weather, Sports",
+      "news_link": "https://wsvn.com/news/us-world/nvidia-shares-tumble-ceo-investigation/",
+      "bias": "Lean Left",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia shares tumble Monday morning. What happened with Jensen Huang?",
+      "news_link": "https://www.independent.co.uk/bulletin/news/nvidia-jensen-huang-stocks-drop-affair-chinese-spy-b3081785.html",
+      "bias": "Lean Left",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia's stock slides as questions swirl around Jensen Huang's future as CEO",
+      "news_link": "https://www.cbsnews.com/news/nvidia-jensen-huang-stock-board-investigation-spy/",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "4.27% of Nvidia's Action for Espionage Investigation Falls",
+      "news_link": "https://www.reforma.com/cae-4-27-accion-de-nvidia-por-investigacion-de-espionaje/ar3310988",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia sell-off continues: Chipmaker stock plunges 9% as Jensen Huang faces espionage controversy",
+      "news_link": "https://m.economictimes.com/markets/us-stocks/wall-street-guide/nvidia-stock-crashes-8-after-a-foreign-intelligence-probe-initiated-by-ai-company-into-ceo-jensen-huang/articleshow/135685302.cms",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia spy drama sparks second stock market shock in a week",
+      "news_link": "https://www.newsweek.com/nvidia-spy-drama-sparks-stock-market-shock-12686252",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Boss Affair Costs Company More than 350 Billion in Market Value",
+      "news_link": "https://www.rd.nl/a/affaire-nvidia-baas-kost-bedrijf-ruim-350-miljard-aan-beurswaarde",
+      "bias": "Right",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia slumps after a 'foreign intelligence' probe initiated by AI company into CEO Jensen Huang",
+      "news_link": "https://www.bowenislandundercurrent.com/the-mix/nvidia-slumps-after-a-foreign-intelligence-probe-initiated-by-ai-company-into-ceo-jensen-huang-12995308",
+      "bias": "Lean Left",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia shares crash 7% as CEO Jensen Huang affair scandal rattles investors",
+      "news_link": "https://www.indiatoday.in/business/story/nvidia-shares-crash-7-as-ceo-jensen-huang-affair-scandal-rattles-investors-3035565-2026-11-09",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia stock falls after probe into CEO’s affair with alleged foreign spy",
+      "news_link": "https://www.cnn.com/2026/11/09/investing/nvidia-stock-huang-investigation",
+      "bias": "Lean Left",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Stock Takes a Sharp Dive Due to Jensen Huang Espionage Affair",
+      "news_link": "https://www.bnr.nl/nieuws/economie/10615080/nvidia-aandeel-maakt-forse-duikval-door-spionage-affaire-jensen-huang",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "Wall Street set to open higher after last week’s AI rout; Nvidia down",
+      "news_link": "https://www.businesstimes.com.sg/companies-markets/capital-markets-currencies/wall-street-set-open-higher-after-last-weeks-ai-rout-nvidia-down",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia shares drop after co. investigates whether CEO was 'target of a foreign intelligence effort'",
+      "news_link": "https://www.kcra.com/article/nvidia-shares-drop-intelligence-effor-investigation/74375229",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia shares drop after co. investigates whether CEO was ‘target of a foreign intelligence effort’",
+      "news_link": "https://mymotherlode.com/news/technology/11294023/nvidia-shares-drop-after-co-investigates-whether-ceo-was-target-of-a-foreign-intelligence-effort.html",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Stock Falls Over 5% as Board Investigates Alleged Spying on Jensen Huang",
+      "news_link": "https://thecryptobasic.com/2026/11/09/nvidia-stock-falls-over-5-as-board-investigates-alleged-spying-on-jensen-huang/",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Shares Tumble As AI Giant Investigates Jensen Huang’s Relationship With Suspected Chinese Spy",
+      "news_link": "https://www.forbes.com/sites/fionariley/2026/11/09/nvidia-shares-tumble-as-ai-giant-investigates-jensen-huangs-relationship-with-suspected-chinese-spy/",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia shares drop after co. investigates whether CEO was ‘target of a foreign intelligence effort’ – WTOP News",
+      "news_link": "https://wtop.com/national/2026/11/nvidia-shares-drop-after-co-investigates-whether-ceo-was-target-of-a-foreign-intelligence-effort/",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Internal probe into CEO Jensen Huang and 'foreign intelligence' weighs on high-flying Nvidia shares",
+      "news_link": "https://apnews.com/article/nvidia-jensen-huang-spy-china-63531dec0fe5c145afaac94dde31d478",
+      "bias": "Lean Left",
+      "text": null
+    },
+    {
+      "news_title": "US futures climb, Nvidia slides amid burgeoning investigation involving CEO Jensen Huang",
+      "news_link": "https://www.telegraphherald.com/ap/business/article_aae3fcb7-fab4-5285-b0d0-fa069465ab3f.html",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia stock slides as it probes claims CEO was intelligence target",
+      "news_link": "https://www.euronews.com/2026/11/09/nvidia-stock-slides-as-company-probes-claims-ceo-was-foreign-intelligence-target",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Biggest stock movers Monday: NVDA, VIR, and more",
+      "news_link": "https://seekingalpha.com/news/4668828-biggest-stock-movers-monday-nvda-and-more",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia stock falls 4% as scrutiny turns to Jensen Huang’s affair with alleged Chinese spy",
+      "news_link": "https://www.cnbc.com/2026/11/09/nvidia-jensen-huang-chinese-spy-investigation.html",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Stock Falls After Suspected Chinese Spying Against Top Executive",
+      "news_link": "https://www.berlingske.dk/business/nvidia-aktien-falder-efter-mistanke-om-kinesisk-spionage-mod-topchef",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia's shares slide after-hours as tech giant probes CEO Jensen Huang",
+      "news_link": "https://tribune.com.pk/story/2639419/nvidias-shares-slide-after-hours-as-tech-giant-probes-ceo-jensen-huang",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Rages After News of CEO Investigation",
+      "news_link": "https://www.svd.se/a/oMRO6K/nvidia-rasar-efter-besked-om-vd-utredning",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "Dow Futures Jump 376 Points After Rough Week, but Nvidia Slides on Board Probe of CEO Jensen Huang",
+      "news_link": "https://conservativedailynews.com/2026/11/dow-futures-jump-376-points-after-rough-week-but-nvidia-slides-on-board-probe-of-ceo-jensen-huang/",
+      "bias": "Far Right",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Loses over 350 Billion Dollars in Market Value After CEO Jensen Huang Admits Affair with Possible Chinese Spy",
+      "news_link": "https://www.demorgen.be/nieuws/nvidia-verliest-ruim-350-miljard-dollar-aan-beurswaarde-nadat-ceo-jensen-huang-affaire-met-mogelijke-chinese-spion-toegeeft~bd14166c/",
+      "bias": "Lean Left",
+      "text": null
+    },
+    {
+      "news_title": "United States: AI Chip Manufacturers Sink After Mid-Term Elections",
+      "news_link": "https://sapo.pt/artigo/estados-unidos-fabricantes-de-chips-de-ia-afundam-apos-eleicoes-intercalares-6af16b02013ef6a6907ae838",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia shares fall as CEO probe rattles investors",
+      "news_link": "https://www.straitstimes.com/business/nvidias-out-of-hour-shares-fall-as-firm-probes-ceo-jensen-huang",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia's out-of-hour shares fall as firm probes CEO Jensen Huang",
+      "news_link": "https://www.channelnewsasia.com/world/nvidia-shares-jensen-huang-probe-affair-6535186",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia's shares slide as firm probes CEO over spy claims",
+      "news_link": "https://www.rte.ie/news/2026/1109/1598468-nvidia-investigation/",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia shares plummet after Huang investigation",
+      "news_link": "https://www.politico.com/news/2026/11/09/nvidia-shares-plummet-huang-investigation",
+      "bias": "Lean Left",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Stock Has More Than 60% Upside According to Analysts' Average Price Target. Should You Buy While the AI Trade Wobbles?",
+      "news_link": "https://www.fool.com/investing/2026/11/07/nvidia-stock-has-more-than-60-upside-according-to/",
+      "bias": "Lean Left",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Stock Just Crashed 22%. Jim Cramer Says It's the Cheapest in a Decade",
+      "news_link": "https://247wallst.com/investing/2026/11/05/nvidia-stock-just-crashed-22-jim-cramer-says-its-the-cheapest-in-a-decade/",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia CEO Jensen Huang's China spy probe explained: Background, allegations and key details - THE LOCAL REPORT ARTICLES",
+      "news_link": "https://articles.thelocalreport.in/nvidia-ceo-jensen-huangs-china-spy-probe-explained-background-allegations-and-key-details/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Shares Fall 8.7% After Investigation to Jensen Huang",
+      "news_link": "https://laorquesta.mx/acciones-de-nvidia-caen-8-7-tras-investigacion-a-jensen-huang/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Is Jensen Huang More Important than Nvidia? Bloomberg Issues Global Warning.",
+      "news_link": "https://www.aboluowang.com/2026/1110/2455595.html",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Shares Fall 4% After Jensen Huang’s ‘Affair’ with Chinese Spy: How Much Did Wall Street Close?",
+      "news_link": "https://estamosaqui.mx/acciones-de-nvidia-caen-4-tras-affair-de-jensen-huang-con-espia-china-en-cuanto-cerro-wall-street/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia's Actions Fall While Investigating Whether Its Executive Director Was Targeted by Foreign Intelligence - Reality Oaxaca",
+      "news_link": "https://realidadoaxaca.com/caen-acciones-de-nvidia-mientras-investiga-si-su-director-ejecutivo-fue-objetivo-de-inteligencia-extranjera/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Investigates Its CEO, Jensen Huang, for Alleged Espionage of China; Actions Collapse (Writing Shipyard Report) juliosastillero.com",
+      "news_link": "https://julioastillero.com/nvidia-investiga-a-su-ceo-jensen-huang-por-presunto-espionaje-de-china-acciones-se-desploman/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia stock drops amid investigation into CEO’s affair with suspected Chinese spy",
+      "news_link": "https://www.socialnews.xyz/?p=7838120",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Blood Red Day for Nvidia Stock",
+      "news_link": "https://www.nettavisen.no/okonomi/blodrod-dag-for-nvidia-aksjen/s/80-95-234723",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Shares Are Falling.",
+      "news_link": "https://www.haberturk.com/ekonomi/nvidia-hisseleri-dususte-3926132",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia CEO Controversy Sends a Warning Signal to Investors Betting on Its AI Future",
+      "news_link": "https://financebuzz.com/news/nvidia-jensen-huang-investigation-risks",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Investigates Relationship of Its CEO, Jensen Huang, with Alleged Chinese Spy",
+      "news_link": "https://www.yucatan.com.mx/mundo/2026/11/09/nvidia-investiga-relacion-de-su-ceo-jensen-huang-con-presunta-espia-china.html",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Jensen Huang Investigation: Impact on AI Stocks",
+      "news_link": "https://www.channelchek.com/news-channel/jensen-huang-nvidia-investigation-ai-stocks",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Retreats Almost 6% After Research on CEO",
+      "news_link": "https://www.spacemoney.com.br/investimentos/nvidia-cai-apuracao-ceo/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Loses About 5% in Stock Exchange After Scandal with President",
+      "news_link": "https://sicnoticias.pt/programas/economia-expresso/2026-11-09-video-nvidia-perde-cerca-de-5-em-bolsa-apos-escandalo-com-presidente-b6f248f7",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Investigation to the CEO of Nvidia of Alleged Espionage Affects the Actions of the Chip Company",
+      "news_link": "https://www.independentespanol.com/tecnologia/investigacion-al-ceo-de-nvidia-sobre-presunto-espionaje-afecta-las-acciones-de-la-empresa-de-chips-b3081990.html",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Actions Fall More than 4% with CEO Case with Alleged Chinese Spy",
+      "news_link": "https://www.cnnbrasil.com.br/economia/money/mercado/acoes-da-nvidia-caem-mais-de-4-com-caso-de-ceo-com-suposta-espia-chinesa/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Shares Fell Sharply Following the Huang Investigation.",
+      "news_link": "https://www.bloomberght.com/nvidia-hisseleri-huang-sorusturmasinin-ardindan-sert-dustu-3794014",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia: Shares Fall 8% Amid Internal Investigation Into Jensen Huang - ONLARISSA.GR News Larissa",
+      "news_link": "https://www.onlarissa.gr/2026/11/09/nvidia-ptosi-8-sti-metochi-en-meso-esoterikis-erevnas-gia-ton-tzensen-chouangk/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia in Vrie, on the Stock Exchange. Actions Drop Massively, After the Extension of the Survey on Ties with China • Newsweek Romania",
+      "news_link": "https://newsweek.ro/economie/nvidia-vrie-bursa-actiuni-scad-masiv-extindere-ancheta-legaturi-china",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Scandal Overseas. Giant's Share Price Reacts",
+      "news_link": "https://www.money.pl/gielda/skandal-za-oceanem-kurs-giganta-reaguje-7349233944160736a.html",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia's Share Has Fallen on the Stock Exchange Following the Revelations on Jensen Huang",
+      "news_link": "https://www.rtl.be/page-videos/laction-de-nvidia-chute-en-bourse-suite-aux-revelations-sur-jensen-huang/2026-11-09/video/806093",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia: Plunges 7% on Wall Street – Jensen Huang Under Scrutiny for Espionage Case",
+      "news_link": "https://marketnews.gr/nvidia-boutia-7-sti-wall-street-sto-mikroskopio-o-tzensen-xouangk-gia-ypothesi-kataskopeias/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Shares Plunge 5.75%, Uproar After CEO Jensen Huang's Links with Chinese Intelligence Revealed",
+      "news_link": "https://www.tv9marathi.com/international/decline-in-nvidia-shares-links-between-ceo-jensen-huang-and-chinese-intelligence-1800686.html",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Loses 192 Thousand Mdd of Stock Value Due to His CEO's Affair with Alleged Chinese Spy",
+      "news_link": "https://oem.com.mx/elsoldemexico/finanzas/nvidia-pierde-192-mil-mdd-de-valor-bursatil-por-amorio-de-su-ceo-con-presunta-espia-china-33049525",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Shares Plunge 6% After CEO's Relationship with Alleged Chinese Spy",
+      "news_link": "https://athina984.gr/2026/11/09/nvidia-voytia-6-sti-metochi-meta-tis-apokalypseis-gia-schesi-toy-ceo-me-feromeni-kineza-kataskopo/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia's Stock Market Strike for Scandal Involving His CEO and a Supposed Chinese Spy",
+      "news_link": "https://www.ex-ante.cl/negocios/escandalo-nvidia-investigacion-ceo-espia/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Shares Fell More than 5% to $175.9 Following the Huang Investigation",
+      "news_link": "https://www.sondakika.com/ekonomi/haber-huang-sorusturmasi-sonrasi-nvidia-hisseleri-yuzde--20411312/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Scandal Spying on the Chip Industry for Artificial Intelligence. A Huge Company Has Lost $350 Billion on the Stock Exchange",
+      "news_link": "https://adevarul.ro/economie/scandal-de-spionaj-in-industria-cipurilor-pentru-2570164.html",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Why Nvidia Stock Fell After Jensen Huang Investigation",
+      "news_link": "https://www.techloy.com/nvidia-stock-falls-jensen-huang-investigation/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Bargain Hunters Push Nasdaq Well over 2 Percent Higher, Investors See Opportunities in Nvidia Dip",
+      "news_link": "https://www.tijd.be/markten-live/nieuws/aandelen-buitenlandse-beurzen/koopjesjagers-duwen-nasdaq-dik-2-procent-hoger-beleggers-zien-kansen-in-nvidia-dip/10699136.html",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Jensen Huang Loses 7.4 Billion on the Stock Market: the CEO Survey Weighs on Nvidia and Its Assets",
+      "news_link": "https://forbes.it/2026/11/09/jensen-huang-perde-74-miliardi-in-borsa-lindagine-sul-ceo-pesa-su-nvidia-e-sul-suo-patrimonio/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia shares plunge 7% as controversy surrounds CEO Jensen Huang",
+      "news_link": "https://madhyamamonline.com/business/nvidia-shares-plunge-7-as-controversy-surrounds-ceo-jensen-huang-1570753",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia: Over $330 Billion Wiped Out Due to Huang Scandal",
+      "news_link": "https://www.ieidiseis.gr/kosmos/908471/nvidia-pano-apo-330-dis-dolaria-exanemistikan-exaitias-toy-skandaloy-me-ton-choyangk/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Shares Fall to 8% and Put at Risk 350,000 Mdd of Stock Value per Jensen Huang Case",
+      "news_link": "https://estadored.mx/2026/11/acciones-de-nvidia-caen-hasta-8-y-ponen-en-riesgo-350000-mdd-de-valor-bursatil-por-caso-jensen-huang/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nasdaq 100 Climbs as Much as 2.66% as Technology Shares Rally",
+      "news_link": "https://www.tokenpost.com/news/investing/52393",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia CEO Is Target of Internal Investigation After Suspect of Chinese Espionage",
+      "news_link": "https://forbes.com.br/forbes-tech/2026/11/ceo-da-nvidia-e-alvo-de-investigacao-interna-apos-suspeita-de-espionagem-chinesa/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia: Shares Plunge up to 8% - Investigation Into CEO and His Ties to Chinese Spy",
+      "news_link": "https://www.flash.gr/nvidia-voytia-eos-8-sti-metochi-ereyna-gia-ton-ceo-kai-tis-scheseis-toy-me-kineza-kataskopo-1090425",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia's Actions Fall While the Chip Giant Investigates the CEO on Espionage Charges",
+      "news_link": "https://revistafortuna.com.mx/2026/11/09/las-acciones-de-nvidia-caen-mientras-el-gigante-de-los-chips-investiga-al-ceo-por-acusaciones-de-espionaje/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Collapsed More than 8% on Wall Street because of the Spy Scandal Involving His CEO, but the Bags Go Up",
+      "news_link": "https://www.perfil.com/economia/nvidia-se-desplomo-mas-de-8-en-wall-street-por-el-escandalo-de-espionaje-que-involucra-a-su-ceo-pero-las-bolsas-suben-aLcUb0v1SGHW",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Wall Street Opens up After IA Sector Losses Last Week",
+      "news_link": "https://www.infomoney.com.br/mercados/wall-street-abre-em-alta-apos-perdas-do-setor-de-ia-na-semana-passada/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Devalues $270 Billion After CEO Case with Alleged Chinese Spy",
+      "news_link": "https://diariodopoder.com.br/dinheiro/ttc-dinheiro/nvidia-desvaloriza-us270-bilhoes-apos-caso-do-ceo-com-suposta-espia-chinesa",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "US Opening: Significant Recovery - Nvidia Shares Knock In",
+      "news_link": "https://www.moneycab.com/maerkte/us-eroeffnung-erholung-nvidia-aktien-knicken-ein/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Stock Drops as Company Investigates CEO Amid Spy Allegations - Jowhar News Leader",
+      "news_link": "https://jowhar.com/nvidia-stock-drops-as-company-investigates-ceo-amid-spy-allegations/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia's Shares Fall Almost 8% to the Investigation Against Its CEO, Jensen Huang",
+      "news_link": "https://elceo.com/mercados/acciones-nvidia-caen-tras-investigacion-contra-jensen-huang/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Wall Street Rising, but Nvidia Sinks Into the Huang Case.",
+      "news_link": "https://www.teleborsa.it/News/2026/11/09/wall-street-in-rialzo-ma-nvidia-affonda-sul-caso-huang-petrolio-in-calo-187.html",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Wall Street Is Expected to Rise – Nvidia Against the Tide",
+      "news_link": "https://www.di.se/live/wall-street-vantas-stiga-nvidia-mot-strommen/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Wall Street Started Monday with Gains, Focus on AI and Nvidia",
+      "news_link": "https://www.aripaev.ee/borsiuudised/2026/11/09/wall-street-alustas-esmaspaeva-tousuga-fookuses-ai-ning-nvidia",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Distrust in Nvidia Plummets as Wall Street Opens in the Green",
+      "news_link": "https://www.privataaffarer.se/alla-nyheter/borstelegram/otrohetsras-i-nvidia-nar-wall-street-oppnar-pa-gront/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Wall Street Towards Green Opening – but Nvidia's Stock Is Pressured by Spying Suspicions",
+      "news_link": "https://www.borskollen.se/nyheter/27/wall-street-mot-gron-oppning-men-nvidias-aktie-pressas-av-spionmisstankar",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Wall Street Rebounds, Leaving Nvidia Behind",
+      "news_link": "https://privatbankar.hu/cikkek/reszveny/az-nvidia-t-hatrahagyva-pattant-fel-a-wall-street.html?utm_source=rss&utm_medium=referral",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "BEFORE THE BELL: US futures climb, Nvidia slides amid burgeoning investigation involving CEO Jensen Huang",
+      "news_link": "https://www.sfntoday.com/2026/11/09/before-the-bell-us-futures-climb-nvidia-slides-amid-burgeoning-investigation-involving-ceo-jensen-huang/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia’s spy bombshell and Footsie gains on Iran talks progress",
+      "news_link": "https://wealthdfm.com/nvidias-spy-bombshell-and-footsie-gains-on-iran-talks-progress/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Lost Almost 5% on the Stock Market Due to the Scandal Involving Its CEO with an Alleged Chinese Spy and Threat to the AI Market",
+      "news_link": "https://misionesonline.net/2026/11/09/nvidia-caida-de-acciones-por-espionaje/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia's Spy Scandal Hits the Stock Market Hard. The Actions of the Giant AI Collapse by up to 6%, and Investors Fear for Jensen Huang's Future.",
+      "news_link": "https://www.businessmagazin.ro/actualitate/scandalul-de-spionaj-de-la-nvidia-loveste-puternic-pe-bursa-actiunile-gigantului-ai-se-prabusesc-cu-pana-la-6-iar-investitorii-se-tem-pentru-viitorul-lui-jensen-huang-23277935",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Shares Fall Sharply on News of Spying Investigation Against Company CEO",
+      "news_link": "https://hvg.hu/kkv/20261109_nvidia-reszvenyek-jensen-huang-kembotrany",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia’s Stock Price Set to Drop After Investigation Into CEO Jensen Huang",
+      "news_link": "https://biztoc.com/x/7cd800310234fe4d",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Invidia's Stock Retreated by More than 5% Before the Opening of the American Market.",
+      "news_link": "https://alborsaanews.com/2026/11/09/2005016",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia's Fall on the Stock Market for Distrust of Jensen Huang: 25% Plummets in the Last month... or -1.5 Trillion Dollars",
+      "news_link": "https://www.businessinsider.es/mercados/caida-nvidia-bolsa-por-desconfianza-con-jensen-huang-su-desplome-ultimo-mes-se-amplia-25-1-5-billones-dolares_7058801_0.html",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Stock Falls 5.6% as Board Investigates CEO Jensen Huang Over China Spy Allegations",
+      "news_link": "https://dailycoin.com/nvidia-ceo-jensen-huang-investigation-nvda-stock-drop/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Plummets on the Stock Exchange for Research on the Personal Life of Its CEO",
+      "news_link": "https://www.lacronicabadajoz.com/economia/2026/11/09/nvidia-desploma-bolsa-investigacion-vida-136237369.html",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Share Breaks in: China's Suspicion of Espionage Burdened AI Giant",
+      "news_link": "https://finanzmarktwelt.de/nvidia-aktie-bricht-ein-chinas-spionageverdacht-belastet-ki-gigant-409373/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "The CEO of an American Giant Is at the Center of a Scandal. A Romance and Chinese Intelligence Lie in the Background.",
+      "news_link": "https://businessinsider.com.pl/gielda/szef-nvidii-jensen-huang-celem-chinskiego-wywiadu-skandal-po-ujawnieniu-romansu/m4bchkz",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Shares Fall 3.4% as Board Opens Probe on CEO",
+      "news_link": "https://www.economy.pk/technology/nvidia-shares-fall-as-board-probes-reports-on-ceo",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia's Jensen Huang problem rattles investors",
+      "news_link": "https://techcentral.co.za/nvidia-jensen-huang-problem-rattles-investors/288157/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Stock Under Pressure Amid Jensen Huang Scandal – Investors Weigh Risks",
+      "news_link": "https://www.kauppalehti.fi/uutiset/a/1d309deb-90aa-4042-93e1-ad9b981d82b0",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia (NVDA) Stock: $186.64 After a 10.7% Week, Huang… – Your Capital Minds",
+      "news_link": "https://yourcapitalminds.com/nvidia-nvda-stock-186-64-after-a-10-7-week-huang/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia Stock $186.64: Results 17 Nov, $200 or $172 Next",
+      "news_link": "https://financefeeds.com/nvidia-nvda-stock-186-64-week-ahead-after-correction-week-huang-memo-results-17-november-bull-200-bear-172/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia stock nears six-month low amid valuation concerns",
+      "news_link": "https://cryptobriefing.com/nvidia-stock-nears-six-month-low-amid-valuation-concerns/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "NVIDIA (NASDAQ:NVDA) Stock Falls 9.3% – Here’s Why",
+      "news_link": "https://www.thecerbatgem.com/2026/11/07/nvidia-nasdaqnvda-stock-falls-9-3-heres-why.html",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia vs Intel: Which Chip Stock Is Riskier as AI Selloff Hits Both and Nvidia's Nov. 17 Earnings Test Looms",
+      "news_link": "https://www.ibtimes.com.au/nvidia-intel-different-risks-tech-selloff-1878081",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Jensen Huang's Wealth Plummets by Rp271 Trillion, Dropping Nvidia Boss From the World's 10 Richest People",
+      "news_link": "https://www.viva.co.id/bisnis/1941740-kekayaan-jensen-huang-anjlok-rp271-triliun-bos-nvidia-terlempar-dari-10-orang-terkaya-dunia",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "NVIDIA CEO Loses $15.1 Billion in a Single Day, Drops Out of the Top 10 Richest List",
+      "news_link": "https://www.mathrubhumi.com/technology/news/nvidia-ceo-jensen-huang-loses-billions-tech-stock-crash-hi70nrvo",
+      "bias": "unknown",
+      "text": null
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "story_id": "GN_20261109_201734_315d5ec8",
+  "metadata": {
+    "title": "Nvidia, CEO Huang sued over disclosures related to suspected Chinese spy",
+    "timestamp": "2026-11-09T20:17:34.356695",
+    "url": "https://ground.news/article/nvidia-ceo-jensen-huang-faces-class-action-over-alleged-spy-ties"
+  },
+  "bias_distribution": {
+    "total_sources": "28",
+    "leaning_left": "1",
+    "center": "7",
+    "leaning_right": "12"
+  },
+  "perspective_summaries": {
+    "left": [
+      "On Monday, Nvidia and Chief Executive Jensen Huang were sued in a proposed class action accusing them of defrauding shareholders by concealing Huang's ties with a suspected Chinese spy.",
+      "The litigation centers on Huang's alleged affair with Alice Huang, a former executive of Singapore-based Megaspeed. The New York Times reported last month that authorities concluded Alice Huang was a Chinese intelligence asset.",
+      "Nvidia shares closed down 4.3% on Monday, reducing the company's market capitalization by approximately $190 billion. Such filings follow unexpected share price declines.",
+      "Huang told employees he had been unfaithful to his wife, though he did not disclose specific details. The company announced a probe into the matter on Sunday.",
+      "Shareholders led by Mark Kistenmacher filed the suit in federal court in San Jose, California, seeking unspecified damages. The document was filed five minutes after market close."
+    ],
+    "center": [],
+    "right": [
+      "Nvidia and CEO Jensen Huang face a proposed shareholder class action alleging they concealed Huang’s ties to Alice Huang, described as a suspected Chinese intelligence asset.",
+      "The complaint alleges that Nvidia and Huang misled shareholders about an alleged affair and failed to disclose related national security concerns.",
+      "Nvidia announced an investigation into the matter, while its shares fell 4.3%, reducing the company’s market value by about $190 billion.",
+      "Shareholders led by Mark Kistenmacher are seeking unspecified damages from Nvidia and Huang."
+    ]
+  },
+  "sources": [
+    {
+      "news_title": "Lawsuit accuses Nvidia, CEO Jensen Huang of misleading investors over suspected Chinese spy",
+      "news_link": "https://www.mercurynews.com/2026/11/09/false-statements-nvidia-ceo-jensen-huang-chinese-spy-artificial-intelligence-china-lawsuit/",
+      "bias": "Lean Left",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia and CEO Sued by Shareholders for Misleading Investors",
+      "news_link": "https://www.bt.dk/udland/nvidia-og-topchef-sagsoeges-af-aktionaerer-for-vildledning",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "Trump Defends Group CEO: Shareholders File Collective Lawsuit Against Nvidia",
+      "news_link": "https://www.n-tv.de/wirtschaft/Aktionaere-reichen-Sammelklage-gegen-Nvidia-ein-id31514178.html",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "“Compensate for Stock Price Slump”… U.S. Nvidia Shareholders File Class-Action Lawsuit Against Jensen Huang",
+      "news_link": "https://www.chosun.com/international/international_general/2026/11/10/MRTDINTEME2TAZBQHEYDAM3FHA/",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia, CEO Jensen Huang hid affair to suspected Chinese spy: shareholder lawsuit",
+      "news_link": "https://nypost.com/2026/11/09/business/nvidia-ceo-jensen-huang-hid-affair-to-suspected-chinese-spy-shareholder-lawsuit/",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "U.S. Nvidia Shareholders Sue Jensen Huang… “Pay Damages for Stock Price Slump”",
+      "news_link": "https://www.yna.co.kr/view/AKR20261110030200091",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia shareholders sue Jensen Huang over alleged spy ties",
+      "news_link": "https://www.dw.com/en/nvidia-shareholders-sue-jensen-huang-over-alleged-spy-ties/a-79905809",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia and Top Executive Huang Charged in Connection with Espionage Case",
+      "news_link": "https://www.rd.nl/a/nvidia-en-topman-huang-aangeklaagd-in-verband-met-spionagezaak",
+      "bias": "Right",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia, CEO Sued by Shareholders Over Alleged Chinese Spy Relationship",
+      "news_link": "https://www.theepochtimes.com/us/nvidia-ceo-sued-by-shareholders-over-alleged-chinese-spy-relationship-6122856",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia, CEO Jensen Huang sued over disclosures related to suspected Chinese spy",
+      "news_link": "https://www.channelnewsasia.com/world/jensen-huang-nvidia-sued-chinese-spy-6537296",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Investor sues Nvidia over Huang's ties to suspected spy after 4.27% drop",
+      "news_link": "https://ppc.land/investor-sues-nvidia-over-huangs-ties-to-suspected-spy-after-4-27-drop/",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia, Jensen Huang sued over alleged Chinese spy links, shareholder fraud claims",
+      "news_link": "https://timesofindia.indiatimes.com/business/international-business/nvidia-jensen-huang-sued-over-alleged-chinese-spy-links-shareholder-fraud-claims/articleshow/135693375.cms",
+      "bias": "Lean Right",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia, CEO Huang sued over disclosures related to suspected Chinese spy",
+      "news_link": "https://www.reuters.com/world/nvidia-ceo-huang-sued-over-disclosures-related-suspected-chinese-spy-2026-11-09/",
+      "bias": "Center",
+      "text": null
+    },
+    {
+      "news_title": "Shareholder Lawsuit, the FBI Interferes: Nvidia Gets Hot",
+      "news_link": "https://www.blick.ch/ausland/aktionaersklage-das-fbi-mischt-sich-ein-fuer-nvidia-wird-es-heiss/wt926rj",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Huang Jen-Hsun Embroiled in Chinese Spy Scandal; Nvidia Shareholders Sue Him.",
+      "news_link": "https://www.epochtimes.com/b5/26/11/9/n14886238.htm",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia and Executive Huang Indicted in Connection with Espionage Case, Trump Defends Him",
+      "news_link": "https://www.bd.nl/buitenland/nvidia-en-topman-huang-aangeklaagd-in-verband-met-spionagezaak-trump-neemt-het-voor-hem-op~aadee4af/",
+      "bias": "unknown",
+      "text": null
+    },
+    {
+      "news_title": "Nvidia and Jensen Huang Charged over Alleged Espionage Case",
+      "news_link": "https://nieuws.nl/economie/nvidia-en-topman-huang-aangeklaagd-in-verband-met-spionagezaak",
+      "bias": "unknown",
+      "text": null
+    }
+  ]
+}
